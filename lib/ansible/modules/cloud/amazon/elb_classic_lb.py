@@ -869,10 +869,10 @@ class ElbManager(object):
                 subnets_to_detach = None
                 subnets_to_attach = list(set(self.subnets) - set(self.elb.subnets))
 
-            if subnets_to_attach:
-                self._attach_subnets(subnets_to_attach)
             if subnets_to_detach:
                 self._detach_subnets(subnets_to_detach)
+            if subnets_to_attach:
+                self._attach_subnets(subnets_to_attach)
 
     def _get_scheme(self):
         """Determine if the current scheme is different than the scheme of the ELB"""
